@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RenovaSangue – Seu sangue renova vidas</title>
+  <link rel="stylesheet" th:href ="@{/css/style.css}"/>
+  <link rel="stylesheet" th:href="@{/css/index.css}"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <ul class="navbar__links">
+    <li><a th:href="@{/requisitos}">Requisitos</a></li>
+    <li><a th:href="@{/comunidade}">Comunidade</a></li>
+    <li><a th:href="@{/agendar}" class="btn-agendar">Agendar Doação</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__text">
+    <span class="badge">CAMPANHA ATIVA</span>
+    <h1 class="hero__title">
+      Seu sangue<br/>
+      <span class="hero__title--red">renova vidas.</span>
+    </h1>
+    <p class="hero__desc">
+      Participe da campanha no Colégio Primeiro de Janeiro.<br/>
+      Um gesto simples que transforma o futuro de quem mais precisa.
+    </p>
+    <div class="hero__actions">
+      <a th:href="@{/agendar}" class="btn btn-primary">Quero ser doador</a>
+      <a th:href="@{/requisitos}" class="btn btn-outline">Ver requisitos</a>
+    </div>
+    <div class="hero__meta">
+      <div class="hero__meta-item">
+        <span class="hero__meta-value" th:text="${evento.data}">30–31 Mai</span>
+        <span class="hero__meta-label">Data do evento</span>
+      </div>
+      <div class="hero__meta-item">
+        <span class="hero__meta-value" th:text="${evento.horario}">08h – 13h</span>
+        <span class="hero__meta-label">Horário de coleta</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <!-- Substituir por imagem real caso disponível -->
+    <div class="hero__img-placeholder" aria-hidden="true">
+      <img th:src="@{/css/images/Coração e bolsa de doação de sangue.png}" alt="fotoBolsaSangue">
+    </div>
+    <div class="stock-badge">
+      <span class="stock-dot"></span>
+      <div>
+        <span class="stock-title">Estoque crítico</span>
+        <span class="stock-types" th:text="${estoques.tipos}">Tipos O− e B−</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS DE NAVEGAÇÃO -->
+<section class="nav-cards">
+  <div class="nav-card">
+    <div class="nav-card__icon">?</div>
+    <h3 class="nav-card__title">Posso doar?</h3>
+    <p class="nav-card__desc">Verifique os requisitos básicos de idade, peso e saúde para realizar sua boa ação.</p>
+    <a th:href="@{/requisitos}" class="nav-card__link">Ver requisitos →</a>
+  </div>
+  <div class="nav-card">
+    <div class="nav-card__icon">→</div>
+    <h3 class="nav-card__title">Agendamento</h3>
+    <p class="nav-card__desc">Evite filas. Escolha o melhor horário e local para sua próxima doação de sangue.</p>
+    <a th:href="@{/agendar}" class="nav-card__link">Agendar agora →</a>
+  </div>
+  <div class="nav-card">
+    <div class="nav-card__icon">+</div>
+    <h3 class="nav-card__title">Comunidade</h3>
+    <p class="nav-card__desc">Leia histórias impactantes e conheça os benefícios de ser um doador frequente.</p>
+    <a th:href="@{/comunidade}" class="nav-card__link">Junte-se a nós →</a>
+  </div>
+</section>
+
+<!-- JORNADA DO DOADOR -->
+<section class="journey">
+  <div class="journey__header">
+    <h2 class="journey__title">Jornada do Doador</h2>
+    <p class="journey__subtitle">O processo leva apenas 45 minutos do início ao fim.</p>
+  </div>
+
+  <div class="journey__steps">
+
+  <div class="journey__step">
+
+    <span class="journey__step-num">01</span>
+    <div>
+      <h4 class="journey__step-title">Cadastro</h4>
+      <p class="journey__step-desc">Apresente seus documentos.</p>
+    </div>
+  </div>
+
+  <div class="journey__step journey__step--active">
+    <span class="journey__step-num">02</span>
+    <div>
+      <h4 class="journey__step-title">Pré-Triagem</h4>
+      <p class="journey__step-desc">Avaliação de frequência cardíaca, temperatura, pressão e peso.</p>
+    </div>
+
+  </div>
+  
+  </div>
+
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <span class="footer__copy">© 2026 Renova Sangue. Doar é renovar vidas.</span>
+  <nav class="footer__links">
+    <a th:href="@{/privacidade}">Privacidade</a>
+    <a th:href="@{/termos}">Termos</a>
+    <a th:href="@{/contato}">Contato</a>
+  </nav>
+</footer>
+
+</body>
+</html>
