@@ -1,0 +1,185 @@
+/* =============================================
+   RENOVASANGUE – requisitos.css
+   ============================================= */
+
+.req-layout { padding-top: 48px; }
+
+.req-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.req-page-title {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+
+.back-link {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+/* ── LAYOUT DE DUAS COLUNAS ────────────────────── */
+.req-body {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── ETAPAS SIDEBAR ────────────────────────── */
+.req-steps-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  transition: background .15s;
+}
+
+.step-item:hover { background: var(--gray-100); }
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+  position: relative; 
+}
+
+.step-item:not(:last-child) .step-num::after {
+  content: '';
+  position: absolute;
+  top: 40px;      
+  left: 50%;     
+  transform: translateX(-50%);
+  width: 0.5px;    
+  height: 32px;   
+  background: #6f6f6f; 
+}
+
+.step-title {
+  font-size: .875rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.step-desc {
+  font-size: .8rem;
+  color: var(--gray-400);
+  line-height: 1.4;
+}
+
+/* ── CARDS DE CONTEUDO ────────────────────────── */
+.req-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.req-card {
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.req-card--warning {
+  background: var(--red-light);
+  border-color: transparent;
+}
+
+.req-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #923232;
+}
+
+/* ── LISTA DE REQUISITOS ──────────────────────── */
+.req-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.req-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: .9rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.req-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ── QUEM NÃO PODE DOAR ─────────────────────── */
+.req-warn-section {
+  margin-bottom: 20px;
+}
+
+.req-warn-section:last-child { margin-bottom: 0; }
+
+.req-warn-title {
+  font-size: .8rem;
+  font-weight: 700;
+  color: #923232;
+  margin-bottom: 6px;
+}
+
+.req-warn-text {
+  font-size: .85rem;
+  color: #923232;
+  line-height: 1.6;
+}
+
+/* ── CTA (CHAMADA PARA AÇÃO) BUTÃO ───────────────────────────── */
+.req-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.req-btn-cta {
+  padding: 16px 40px;
+  font-size: 1rem;
+}
