@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Requisitos – RenovaSangue</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+  <link rel="stylesheet" th:href="@{/css/requisitos.css}"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <ul class="navbar__links">
+    <li><a th:href="@{/requisitos}" class="active">Requisitos</a></li>
+    <li><a th:href="@{/comunidade}">Comunidade</a></li>
+    <li><a th:href="@{/agendar}" class="btn-agendar">Agendar Doação</a></li>
+  </ul>
+</nav>
+
+<div class="page-container req-layout">
+
+  <!-- CABEÇALHO DA PÁGINA -->
+  <div class="req-header">
+    <a th:href="@{/}" class="back-link">
+      <span class="back-icon">←</span>
+    </a>
+    <h1 class="req-page-title">O que é preciso para doar?</h1>
+  </div>
+
+  <!-- LAYOUT DUAS COLUNAS -->
+  <div class="req-body">
+
+    <!-- COLUNA ESQUERDA: ETAPAS -->
+<aside class="req-steps">
+  <p class="req-steps-label">ETAPAS</p>
+  <ul class="step-list">
+    
+    <li class="step-item step-item--active">
+      <span class="step-num">1</span>
+      <div>
+        <p class="step-title">Cadastro</p>
+        <p class="step-desc">Apresente seus documentos.</p>
+      </div>
+    </li> <li class="step-item">
+      <span class="step-num">2</span>
+      <div>
+        <p class="step-title">Pré-Triagem</p>
+        <p class="step-desc">Avaliação de frequência cardíaca, temperatura, pressão e peso.</p>
+      </div>
+    </li>
+
+    <li class="step-item">
+      <span class="step-num">3</span>
+      <div>
+        <p class="step-title">Triagem Clínica</p>
+        <p class="step-desc">Entrevista com médico (individual e sigilosa).</p>
+      </div>
+    </li>
+
+    <li class="step-item">
+      <span class="step-num">4</span>
+      <div>
+        <p class="step-title">Voto de Autoexclusão</p>
+        <p class="step-desc">Vote se for honesto com suas respostas.</p>
+      </div>
+    </li>
+
+    <li class="step-item">
+      <span class="step-num">5</span>
+      <div>
+        <p class="step-title">Coleta de Sangue</p>
+        <p class="step-desc">Em até 15 minutos sua boa ação será concluída.</p>
+      </div>
+    </li>
+
+  </ul>
+</aside>
+
+    <!-- COLUNA DIREITA: CONTEÚDO -->
+    <main class="req-content">
+
+      <!-- REQUISITOS PARA DOAÇÃO -->
+      <div class="req-card">
+        <h2 class="req-card-title">Requisitos para doação</h2>
+        <ul class="req-list">
+          <li>
+            <span class="req-dot"></span>
+            <span>Ter entre 16 e 69 anos.</span>
+          </li>
+
+          <li>
+           <span class="req-dot"></span>
+            <span>Apresentar documento de identificação com foto (RG, CNH, carteira de trabalho ou digital).</span>
+          </li>
+
+          <li>
+           <span class="req-dot"></span>
+            <span>Pesar no mínimo 50kg.</span>
+          </li>
+
+          <li>
+           <span class="req-dot"></span>
+            <span>Ter dormido pelo menos 6 horas nas últimas 24 horas.</span>
+          </li>
+
+          <li>
+           <span class="req-dot"></span>
+            <span>Evitar alimentos gordurosos nas 3 horas que antecedem a doação. Após o almoço, aguardar 2 horas.</span>
+          </li>
+          
+        </ul>
+      </div>
+
+      <!-- QUEM NÃO PODE DOAR -->
+      <div class="req-card req-card--warning">
+        <h2 class="req-card-title">Quem não pode doar</h2>
+
+        <div class="req-warn-section">
+          <h3 class="req-warn-title">Intervalo de doação</h3>
+          <p class="req-warn-text">
+            Homens podem doar até 4 vezes ao ano (mínimo 2 meses entre doações).
+            Mulheres até 3 vezes ao ano (mínimo 3 meses).
+          </p>
+        </div>
+
+        <div class="req-warn-section">
+          <h3 class="req-warn-title">Doenças que impedem</h3>
+          <p class="req-warn-text">
+            Hematológicas, cardíacas, renais, pulmonares, hepáticas, autoimunes, diabetes, hipertireoidismo, hanseníase, tuberculose, câncer, doenças infeccionas (Chagas, Hepatite, AIDS, Sífilis).
+          </p>
+        </div>
+
+        <div class="req-warn-section">
+          <h3 class="req-warn-title">Medicamentos &amp; vacinas</h3>
+          <p class="req-warn-text">
+            Alguns remédios e vacinas impedem temporariamente. Fale com o profissional sobre o que está usando.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="req-cta">
+        <a th:href="@{/agendar}" class="btn btn-primary req-btn-cta">
+          Estou pronto, quero agendar →
+        </a>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <span class="footer__copy">© 2026 Renova Sangue. Doar é renovar vidas.</span>
+  <nav class="footer__links">
+    <a th:href="@{/privacidade}">Privacidade</a>
+    <a th:href="@{/termos}">Termos</a>
+    <a th:href="@{/contato}">Contato</a>
+  </nav>
+</footer>
+
+</body>
+</html>
