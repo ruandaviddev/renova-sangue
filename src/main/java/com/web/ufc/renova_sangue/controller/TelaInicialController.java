@@ -8,22 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class TesteController {
+public class TelaInicialController {
 
-    @GetMapping("/teste")
+    @GetMapping("/telainicial")
     public String teste(Model model) {
-        
-        // 1. Enviando os dados do Evento
-        Map<String, String> evento = new HashMap<>();
-        evento.put("data", "30–31 Mai");
-        evento.put("horario", "08h – 13h");
-        model.addAttribute("evento", evento);
 
-        // 2. Enviando os dados do Estoque Crítico
+        // 1. Enviando os dados do Estoque Crítico
         Map<String, String> estoques = new HashMap<>();
         estoques.put("tipos", "Tipos O− e B−");
         model.addAttribute("estoques", estoques);
 
-        return "index";
+        return "TelaInicial";
     }
 }

@@ -38,16 +38,6 @@
       <a th:href="@{/agendar}" class="btn btn-primary">Quero ser doador</a>
       <a th:href="@{/requisitos}" class="btn btn-outline">Ver requisitos</a>
     </div>
-    <div class="hero__meta">
-      <div class="hero__meta-item">
-        <span class="hero__meta-value" th:text="${evento.data}">30–31 Mai</span>
-        <span class="hero__meta-label">Data do evento</span>
-      </div>
-      <div class="hero__meta-item">
-        <span class="hero__meta-value" th:text="${evento.horario}">08h – 13h</span>
-        <span class="hero__meta-label">Horário de coleta</span>
-      </div>
-    </div>
   </div>
 
   <div class="hero__visual">
@@ -105,13 +95,36 @@
     </div>
   </div>
 
-  <div class="journey__step journey__step--active">
+  <div class="journey__step">
     <span class="journey__step-num">02</span>
     <div>
       <h4 class="journey__step-title">Pré-Triagem</h4>
       <p class="journey__step-desc">Avaliação de frequência cardíaca, temperatura, pressão e peso.</p>
     </div>
+  </div>
 
+  <div class="journey__step">
+    <span class="journey__step-num">03</span>
+    <div>
+      <h4 class="journey__step-title">Triagem Clínica</h4>
+      <p class="journey__step-desc">Entrevista com médico (individual e sigiloso).</p>
+    </div>
+  </div>
+
+  <div class="journey__step">
+    <span class="journey__step-num">04</span>
+    <div>
+      <h4 class="journey__step-title">Voto de Autoexclusão</h4>
+      <p class="journey__step-desc">Vote se for honesto com suas respostas.</p>
+    </div>
+  </div>
+
+  <div class="journey__step">
+    <span class="journey__step-num">05</span>
+    <div>
+      <h4 class="journey__step-title">Coleta de Sangue</h4>
+      <p class="journey__step-desc">Em até 15 minutos sua boa ação será concluída.</p>
+    </div>
   </div>
   
   </div>
