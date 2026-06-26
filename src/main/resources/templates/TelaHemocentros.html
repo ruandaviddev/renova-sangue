@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+  <link rel="stylesheet" th:href="@{/css/hemocentros.css}"/>
+  <title>RenovaSangue – Encontre um Hemocentro</title> 
+</head>
+<body>
+
+<nav class="navbar">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <ul class="navbar__links">
+    <li><a th:href="@{/telarequisitos}">Requisitos</a></li>
+    <li><a th:href="@{/telacomunidade}">Comunidade</a></li>
+    <li><a th:href="@{/telahemocentros}" class="btn-agendar">Agendar Doação</a></li>
+  </ul>
+</nav>
+
+<main class="page-container">
+  <div class="hem-header">
+    <a th:href="@{/}" class="back-link">
+      <span class="back-icon">←</span>
+    </a>
+    <h1 class="hem-page-title">Encontre um Hemocentro perto de você.</h1>
+  </div>
+
+  <p class="search-label">Diga-nos de qual lugar deseja doar</p>
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+    </svg>
+    <input type="text" placeholder="Ex: Teresina - PI" id="city-input" oninput="handleSearch(this.value)" />
+  </div>
+
+  <div class="cards-grid" id="cards-grid">
+    <div class="card" th:each="hemocentro : ${hemocentros}">
+      <h3 th:text="${hemocentro['nome']}">Nome do Hemocentro</h3>
+      <p class="card-state" th:text="${hemocentro['estado']}">Estado</p>
+      
+      <p class="card-section-title">Endereço:</p>
+      <div class="card-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        <span th:text="${hemocentro['endereco']}">Endereço</span>
+      </div>
+      
+      <p class="card-section-title" style="margin-top:12px">Horário de Funcionamento:</p>
+      <div class="card-item" th:each="horario : ${hemocentro['horarios']}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        <span th:text="${horario}">Horário</span>
+      </div>
+      
+      <p class="card-section-title" style="margin-top:12px">Contato:</p>
+      <div class="card-footer">
+        <div>
+          <div class="card-item" th:each="contato : ${hemocentro['contatos']}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <span th:text="${contato}">Telefone</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-red">Agendar Doação</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <span class="footer__copy">© 2026 Renova Sangue. Doar é renovar vidas.</span>
+  <nav class="footer__links">
+    <a th:href="@{/privacidade}">Privacidade</a>
+    <a th:href="@{/termos}">Termos</a>
+    <a th:href="@{/contato}">Contato</a>
+  </nav>
+</footer>
+
+<script>
+  let timer;
+  function handleSearch(val) {
+    clearTimeout(timer);
+    const grid = document.getElementById('cards-grid');
+    if (!val.trim()) { grid.classList.remove('visible'); return; }
+    timer = setTimeout(() => grid.classList.add('visible'), 400);
+  }
+</script>
+</body>
+</html>
