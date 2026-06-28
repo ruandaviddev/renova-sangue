@@ -1,0 +1,128 @@
+/* =============================================
+   RENOVASANGUE – hemocentros.css
+   ============================================= */
+
+.hem-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.hem-page-title {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+
+.back-link {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* ── SEARCH BAR ───────────────────────────── */
+.search-label { 
+  font-size: .85rem; 
+  color: var(--gray-700); 
+  margin-bottom: 8px; 
+  font-weight: 500;
+}
+
+.search-wrap { 
+  position: relative; 
+  max-width: 320px; 
+  margin-bottom: 40px; 
+}
+
+.search-wrap svg {
+  position: absolute; 
+  left: 14px; 
+  top: 50%; 
+  transform: translateY(-50%);
+  width: 16px; 
+  height: 16px; 
+  color: var(--red);
+}
+
+.search-wrap input {
+  width: 100%; 
+  padding: 12px 16px 12px 42px;
+  border: 1.5px solid var(--gray-200); 
+  border-radius: var(--radius-sm);
+  font-size: .9rem; 
+  font-family: var(--font); 
+  outline: none; 
+  transition: border-color 0.15s;
+}
+
+.search-wrap input:focus { border-color: var(--red); }
+
+/* ── CARDS GRID ───────────────────────────── */
+.cards-grid { display: none; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cards-grid.visible { display: grid; }
+
+/* 2. Atualize o card para empurrar o conteúdo */
+.card {
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  background: var(--white);
+  animation: fadeUp 0.25s ease both;
+  
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ocupa toda a altura disponível gerada pelo grid */
+}
+.card:nth-child(2) { animation-delay: .05s; }
+.card:nth-child(3) { animation-delay: .10s; }
+.card:nth-child(4) { animation-delay: .15s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+.card-state { font-size: .8rem; color: var(--gray-400); margin-bottom: 20px; font-weight: 500; }
+.card-section-title { font-size: .8rem; font-weight: 700; color: var(--black); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .03em;}
+
+.card-item {
+  display: flex; 
+  align-items: flex-start; 
+  gap: 10px;
+  font-size: .9rem; 
+  color: var(--gray-700); 
+  margin-bottom: 6px; 
+  line-height: 1.5;
+}
+
+.card-item svg { 
+  width: 14px; 
+  height: 14px; 
+  color: var(--red); 
+  flex-shrink: 0; 
+  margin-top: 4px; 
+}
+
+.cards-grid {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid var(--gray-200);
+  margin-top: auto; 
+  padding-top: 16px;
+}

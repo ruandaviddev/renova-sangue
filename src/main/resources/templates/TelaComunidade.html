@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comunidade – RenovaSangue</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+  <link rel="stylesheet" th:href="@{/css/comunidade.css}"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <a th:href="@{/telainicial}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <ul class="navbar__links">
+    <li><a th:href="@{/telarequisitos}">Requisitos</a></li>
+    <li><a th:href="@{/telacomunidade}" class="active">Comunidade</a></li>
+    <li><a th:href="@{/telahemocentros}" class="btn-agendar">Agendar Doação</a></li>
+  </ul>
+</nav>
+
+<main class="page-container">
+
+  <div class="com-header">
+    <a th:href="@{/telainicial}" class="back-link">
+      <span class="back-icon">←</span>
+    </a>
+    <h1 class="com-page-title">Junte-se a nós.</h1>
+  </div>
+
+  <div class="stories-section">
+    <div class="stories-header">
+      <div>
+        <h2 class="stories-title">Histórias que inspiram</h2>
+        <p class="stories-subtitle">O impacto real de quem escolheu salvar vidas. Compartilhe sua trajetória conosco.</p>
+      </div>
+      <a th:href="@{/comunidade/nova-historia}" class="btn-story-cta">+ Contar minha história</a>
+    </div>
+
+    <div class="stories-grid">
+      <div class="story-card" 
+           th:each="historia, i : ${historias}" 
+           th:classappend="${i.index == 1 || i.index == 3 || i.index == 5 || i.index == 7} ? 'story-card--red' : ''">
+        
+        <div class="story-card__header">
+          <div class="story-avatar" th:text="${historia['nome'] != null ? #strings.substring(historia['nome'], 0, 1) : 'M'}">M</div>
+          <div>
+            <p class="story-name" th:text="${historia['nome']}">Maria Julia de Castro</p>
+            <p class="story-role" th:text="'Doador(a) ' + ${historia['tipo']}">DOADORA O+</p>
+          </div>
+        </div>
+        
+        <p class="story-text" th:text="'&ldquo;' + ${historia['depoimento']} + '&rdquo;'">
+          "Ver a bolsa sendo preenchida me enche de gratidão, sei que faço a diferença na vida de alguém."
+        </p>
+      </div>
+
+      <div class="story-card" 
+           th:each="historia, i : ${historias}" 
+           th:classappend="${i.index == 1 || i.index == 3 || i.index == 5 || i.index == 7} ? 'story-card--red' : ''">
+        
+        <div class="story-card__header">
+          <div class="story-avatar" th:text="${historia['nome'] != null ? #strings.substring(historia['nome'], 0, 1) : 'M'}">M</div>
+          <div>
+            <p class="story-name" th:text="${historia['nome']}">Maria Julia de Castro</p>
+            <p class="story-role" th:text="'Doador(a) ' + ${historia['tipo']}">DOADORA O+</p>
+          </div>
+        </div>
+        
+        <p class="story-text" th:text="'&ldquo;' + ${historia['depoimento']} + '&rdquo;'">
+          "Ver a bolsa sendo preenchida me enche de gratidão, sei que faço a diferença na vida de alguém."
+        </p>
+      </div>
+
+      <div class="story-card" 
+           th:each="historia, i : ${historias}" 
+           th:classappend="${i.index == 1 || i.index == 3 || i.index == 5 || i.index == 7} ? 'story-card--red' : ''">
+        
+        <div class="story-card__header">
+          <div class="story-avatar" th:text="${historia['nome'] != null ? #strings.substring(historia['nome'], 0, 1) : 'M'}">M</div>
+          <div>
+            <p class="story-name" th:text="${historia['nome']}">Maria Julia de Castro</p>
+            <p class="story-role" th:text="'Doador(a) ' + ${historia['tipo']}">DOADORA O+</p>
+          </div>
+        </div>
+        
+        <p class="story-text" th:text="'&ldquo;' + ${historia['depoimento']} + '&rdquo;'">
+          "Ver a bolsa sendo preenchida me enche de gratidão, sei que faço a diferença na vida de alguém."
+        </p>
+      </div>
+
+    </div>
+
+    <div class="stories-grid">
+      <div class="story-card" 
+           th:each="historia, i : ${historias}" 
+           th:classappend="${i.index == 1 || i.index == 3 || i.index == 5 || i.index == 7} ? 'story-card--red' : ''">
+        
+        <div class="story-card__header">
+          <div class="story-avatar" th:text="${historia['nome'] != null ? #strings.substring(historia['nome'], 0, 1) : 'M'}">M</div>
+          <div>
+            <p class="story-name" th:text="${historia['nome']}">Maria Julia de Castro</p>
+            <p class="story-role" th:text="'Doador(a) ' + ${historia['tipo']}">DOADORA O+</p>
+          </div>
+        </div>
+        
+        <p class="story-text" th:text="'&ldquo;' + ${historia['depoimento']} + '&rdquo;'">
+          "Ver a bolsa sendo preenchida me enche de gratidão, sei que faço a diferença na vida de alguém."
+        </p>
+      </div>
+
+      <div class="story-card" 
+           th:each="historia, i : ${historias}" 
+           th:classappend="${i.index == 1 || i.index == 3 || i.index == 5 || i.index == 7} ? 'story-card--red' : ''">
+        
+        <div class="story-card__header">
+          <div class="story-avatar" th:text="${historia['nome'] != null ? #strings.substring(historia['nome'], 0, 1) : 'M'}">M</div>
+          <div>
+            <p class="story-name" th:text="${historia['nome']}">Maria Julia de Castro</p>
+            <p class="story-role" th:text="'Doador(a) ' + ${historia['tipo']}">DOADORA O+</p>
+          </div>
+        </div>
+        
+        <p class="story-text" th:text="'&ldquo;' + ${historia['depoimento']} + '&rdquo;'">
+          "Ver a bolsa sendo preenchida me enche de gratidão, sei que faço a diferença na vida de alguém."
+        </p>
+      </div>
+
+      <div class="story-card" 
+           th:each="historia, i : ${historias}" 
+           th:classappend="${i.index == 1 || i.index == 3 || i.index == 5 || i.index == 7} ? 'story-card--red' : ''">
+        
+        <div class="story-card__header">
+          <div class="story-avatar" th:text="${historia['nome'] != null ? #strings.substring(historia['nome'], 0, 1) : 'M'}">M</div>
+          <div>
+            <p class="story-name" th:text="${historia['nome']}">Maria Julia de Castro</p>
+            <p class="story-role" th:text="'Doador(a) ' + ${historia['tipo']}">DOADORA O+</p>
+          </div>
+        </div>
+        
+        <p class="story-text" th:text="'&ldquo;' + ${historia['depoimento']} + '&rdquo;'">
+          "Ver a bolsa sendo preenchida me enche de gratidão, sei que faço a diferença na vida de alguém."
+        </p>
+      </div>
+
+    </div>
+
+  <div class="pagination-container" th:if="${totalPaginas > 1}">
+    
+    <a th:href="@{/telacomunidade(pagina=${paginaAtual - 1})}" 
+      class="pagination-btn" 
+      th:classappend="${paginaAtual == 1} ? 'disabled' : ''"
+      style="text-decoration: none;">←</a>
+
+    <span class="pagination-pages">
+      <span th:text="${paginaAtual}">1</span>/<span th:text="${totalPaginas}">4</span>
+    </span>
+
+    <a th:href="@{/telacomunidade(pagina=${paginaAtual + 1})}" 
+      class="pagination-btn" 
+      th:classappend="${paginaAtual == totalPaginas} ? 'disabled' : ''"
+      style="text-decoration: none;">→</a>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <span class="footer__copy">© 2026 Renova Sangue. Doar é renovar vidas.</span>
+  <nav class="footer__links">
+    <a th:href="@{/privacidade}">Privacidade</a>
+    <a th:href="@{/termos}">Termos</a>
+    <a th:href="@{/contato}">Contato</a>
+  </nav>
+</footer>
+
+</body>
+</html>
