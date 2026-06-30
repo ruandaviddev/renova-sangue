@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" th:href="@{/css/style.css}"/>
   <link rel="stylesheet" th:href="@{/css/hemocentros.css}"/>
-  <title>RenovaSangue – Encontre um Hemocentro</title> 
+  <title>RenovaSangue – Encontre um Hemocentro</title>
 </head>
 <body>
 
@@ -39,27 +39,31 @@
 
   <div class="cards-grid" id="cards-grid">
     <div class="card" th:each="hemocentro : ${hemocentros}">
-      <h3 th:text="${hemocentro['nome']}">Nome do Hemocentro</h3>
-      <p class="card-state" th:text="${hemocentro['estado']}">Estado</p>
-      
+      <h3 th:text="${hemocentro.nome}">Nome do Hemocentro</h3>
+      <p class="card-state" th:text="${hemocentro.endereco.estado}">Estado</p>
+
       <p class="card-section-title">Endereço:</p>
       <div class="card-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        <span th:text="${hemocentro['endereco']}">Endereço</span>
+        <span th:text="${hemocentro.endereco.rua + ', ' + hemocentro.endereco.numero + ' - ' + hemocentro.endereco.bairro + ', ' + hemocentro.endereco.cidade}">Endereço</span>
       </div>
-      
+
       <p class="card-section-title" style="margin-top:12px">Horário de Funcionamento:</p>
-      <div class="card-item" th:each="horario : ${hemocentro['horarios']}">
+      <div class="card-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        <span th:text="${horario}">Horário</span>
+        <span th:text="${hemocentro.horario_funcionamento}">Horário</span>
       </div>
-      
+
       <p class="card-section-title" style="margin-top:12px">Contato:</p>
       <div class="card-footer">
         <div>
-          <div class="card-item" th:each="contato : ${hemocentro['contatos']}">
+          <div class="card-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-            <span th:text="${contato}">Telefone</span>
+            <span th:text="${hemocentro.telefone}">Telefone</span>
+          </div>
+          <div class="card-item" th:if="${hemocentro.outros_canais != null}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <span th:text="${hemocentro.outros_canais}">Outro contato</span>
           </div>
         </div>
         <button class="btn btn-primary btn-red">Agendar Doação</button>

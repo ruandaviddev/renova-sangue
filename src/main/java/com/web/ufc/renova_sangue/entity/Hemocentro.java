@@ -15,7 +15,7 @@ public class Hemocentro {
 
     @OneToOne
     @JoinColumn(name = "endereco_id")
-    private Endereco endereco_id;
+    private Endereco endereco;
 
     private String regiao;
     private String telefone;
