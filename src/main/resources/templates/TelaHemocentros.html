@@ -37,7 +37,7 @@
     <input type="text" placeholder="Ex: Teresina - PI" id="city-input" oninput="handleSearch(this.value)" />
   </div>
 
-  <div class="cards-grid" id="cards-grid">
+  <div class="cards-grid visible" id="cards-grid">
     <div class="card" th:each="hemocentro : ${hemocentros}">
       <h3 th:text="${hemocentro.nome}">Nome do Hemocentro</h3>
       <p class="card-state" th:text="${hemocentro.endereco.estado}">Estado</p>
@@ -66,7 +66,9 @@
             <span th:text="${hemocentro.outros_canais}">Outro contato</span>
           </div>
         </div>
-        <button class="btn btn-primary btn-red">Agendar Doação</button>
+        <a th:href="${hemocentro.site}" target="_blank" class="btn btn-primary btn-red">
+          Agendar Doação
+        </a>
       </div>
     </div>
   </div>
@@ -89,9 +91,21 @@
   let timer;
   function handleSearch(val) {
     clearTimeout(timer);
-    const grid = document.getElementById('cards-grid');
-    if (!val.trim()) { grid.classList.remove('visible'); return; }
-    timer = setTimeout(() => grid.classList.add('visible'), 400);
+    timer = setTimeout(() => filtrarCards(val), 200);
+  }
+
+  function filtrarCards(val) {
+    const termo = val.trim().toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const texto = card.textContent.toLowerCase();
+      if (texto.includes(termo)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   }
 </script>
 </body>
