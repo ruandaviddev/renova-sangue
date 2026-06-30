@@ -23,6 +23,6 @@ public class Relato {
     private LocalDateTime data_criacao;
 
     @ManyToOne
-    @JoinColumn(name = "hemocentro_id")
+    @JoinColumn(name = "hemocentro_id", nullable = true)
     private Hemocentro hemocentro;
 }
