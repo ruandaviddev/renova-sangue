@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -25,5 +26,21 @@ public class TelaComunidadeController {
         model.addAttribute("historias", paginaRelatos.getContent());
 
         return "TelaComunidade";
+    }
+
+    @PostMapping("/publicar-historia")
+    public String publicarHistoria(
+            @RequestParam String nome,
+            @RequestParam String tipoSanguineo,
+            @RequestParam String historia) {
+
+        relatoService.salvar(nome, tipoSanguineo, historia);
+
+        return "redirect:/telacomunidade";
+    }
+
+    @GetMapping("/comunidade/nova-historia")
+    public String exibirFormularioHistoria() {
+        return "TelaHistoria";
     }
 }

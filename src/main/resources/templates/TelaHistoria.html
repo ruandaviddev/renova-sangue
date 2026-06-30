@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RenovaSangue – Conte sua história</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+  <link rel="stylesheet" th:href="@{/css/historia.css}"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <a th:href="@{/telainicial}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <ul class="navbar__links">
+    <li><a th:href="@{/telarequisitos}">Requisitos</a></li>
+    <li><a th:href="@{/telacomunidade}" class="active">Comunidade</a></li>
+    <li><a th:href="@{/telahemocentros}" class="btn-agendar">Agendar Doação</a></li>
+  </ul>
+</nav>
+
+<main class="page-container">
+
+  <div class="page-title">
+    <a th:href="@{/telacomunidade}" class="back-link">
+      <span class="back-icon">&larr;</span>
+    </a>
+    <h1>Conte sua história!</h1>
+  </div>
+
+  <section class="card-form">
+    <form th:action="@{/publicar-historia}" method="POST">
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Qual o seu nome?</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="tipoSanguineo">Qual o seu tipo sanguíneo?</label>
+          <div class="select-wrapper">
+            <select id="tipoSanguineo" name="tipoSanguineo" required>
+              <option value="" selected disabled>Selecione</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group textarea-group">
+        <label for="historia">Conte sua história!</label>
+        <textarea id="historia" name="historia" placeholder="Digite seu texto..." required></textarea>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn btn-primary">Publicar história</button>
+      </div>
+      
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a th:href="@{/}" class="navbar__logo">
+    <span class="navbar__logo-dot"></span>
+    <span><span class="logo-renova">RENOVA</span><span class="logo-sangue">SANGUE</span></span>
+  </a>
+  <span class="footer__copy">© 2026 Renova Sangue. Doar é renovar vidas.</span>
+  <nav class="footer__links">
+    <a th:href="@{/privacidade}">Privacy</a>
+    <a th:href="@{/termos}">Termos</a>
+    <a th:href="@{/contato}">Contato</a>
+  </nav>
+</footer>
+
+</body>
+</html>
