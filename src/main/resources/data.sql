@@ -37,3 +37,31 @@ INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_ca
     ('HEMONORTE - Centro de Hematologia e Hemoterapia do Rio Grande do Norte', 'Nordeste', '(84) 3232-6701', 'De segunda a sexta, das 8h às 17h', NULL, 'http://central.rn.gov.br/index.php?class=GrupoServicoPage&method=onReload', 8);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
     ('HEMOPE - Fundação de Hematologia e Hemoterapia de Pernambuco', 'Nordeste', '(81) 3182-4912', 'De segunda a sexta, das 8h às 17h', NULL, NULL, 9);
+
+-- Relatos
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Maria Júlia de Castro', 'O+', 'Ver a bolsa sendo preenchida me enche de gratidão. Sei que em algum lugar, uma pessoa vai receber uma segunda chance.', '2026-01-15 10:30:00', 1);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('João Pedro Almeida', 'A+', 'Comecei a doar depois que minha avó precisou de transfusão. Hoje é um compromisso mensal na minha vida.', '2026-01-20 14:15:00', 1);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Ana Beatriz Souza', 'AB-', 'Sou doadora rara e isso me faz sentir ainda mais responsável. Cada doação minha pode ser essencial para alguém.', '2026-02-03 09:00:00', 2);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Carlos Eduardo Lima', 'O-', 'Doador universal aqui! Já perdi a conta de quantas vezes doei, mas cada vez é gratificante como a primeira.', '2026-02-10 16:45:00', 2);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Fernanda Costa', 'B+', 'No início tinha medo de agulha, hoje incentivo todos os meus amigos a doarem também. É rápido e salva vidas.', '2026-02-18 11:20:00', 3);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Rafael Santos', 'A-', 'Minha esposa precisou de sangue no parto e isso mudou minha perspectiva sobre doação. Agora sou doador frequente.', '2026-03-01 08:30:00', 1);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Juliana Pereira', 'B-', 'Doar sangue é um dos atos mais simples e poderosos que podemos fazer. Recomendo a todos que possam.', '2026-03-12 13:00:00', 2);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Pedro Henrique Oliveira', 'AB+', 'Já são 10 doações e pretendo continuar. É emocionante saber que ajudei pessoas que nunca vou conhecer.', '2026-03-25 15:30:00', 3);
+
+INSERT INTO relato (nome_autor, tipo_sanguineo, texto_relato, data_criacao, hemocentro_id) VALUES
+    ('Camila Rodrigues', 'O+', 'Levei meus filhos para verem o processo de doação. Quero que eles cresçam entendendo a importância desse gesto.', '2026-04-02 10:00:00', 1);
