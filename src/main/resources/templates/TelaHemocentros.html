@@ -66,9 +66,13 @@
             <span th:text="${hemocentro.outros_canais}">Outro contato</span>
           </div>
         </div>
-        <a th:href="${hemocentro.site}" target="_blank" class="btn btn-primary btn-red">
+        <a th:if="${hemocentro.site != null}"
+           th:href="${hemocentro.site}"
+           target="_blank"
+           class="btn btn-primary btn-red">
           Agendar Doação
         </a>
+        <span th:unless="${hemocentro.site != null}" class="btn btn-disabled">Agendamento online indisponível</span>
       </div>
     </div>
   </div>
