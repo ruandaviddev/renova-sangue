@@ -24,17 +24,17 @@ INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_ca
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
     ('HEMOCE - Centro de Hematologia e Hemoterapia do Ceará', 'Nordeste', '(85) 3101-2293', 'De segunda a sexta, das 8h às 17h30. Sábado, das 7h às 16h', '(85) 3101-2275', 'https://doador.hemoce.ce.gov.br/', 2);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
-    ('HEMOBA - Fundação de Hematologia e Hemoterapia da Bahia', 'Nordeste', '(71) 3116-5690', 'De segunda a sexta, das 8h às 17h', NULL, NULL, 3);
+    ('HEMOBA - Fundação de Hematologia e Hemoterapia da Bahia', 'Nordeste', '(71) 3116-5690', 'De segunda a sexta, das 8h às 17h', NULL, 'https://www.ba.gov.br/servico/hemoba/doar-sangue-hemoba/etapa/doacao-de-sangue', 3);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
     ('HEMOAL - Centro de Hematologia e Hemoterapia de Alagoas', 'Nordeste', '(82) 3326-9854', 'De segunda a sexta, das 8h às 17h', NULL, NULL, 4);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
-    ('HEMOSE - Centro de Hemoterapia de Sergipe', 'Nordeste', '(79) 3225-8003', 'De segunda a sexta, das 8h às 17h', '(79) 3225-8002', NULL, 5);
+    ('HEMOSE - Centro de Hemoterapia de Sergipe', 'Nordeste', '(79) 3225-8003', 'De segunda a sexta, das 8h às 17h', '(79) 3225-8002', 'https://fsph.se.gov.br/hemose/', 5);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
-    ('HEMOÍBA - Centro de Hematologia e Hemoterapia da Paraíba', 'Nordeste', '(83) 3133-3470', 'De segunda a sexta, das 8h às 17h', '(83) 3133-3413', NULL, 6);
+    ('HEMOÍBA - Centro de Hematologia e Hemoterapia da Paraíba', 'Nordeste', '(83) 3133-3470', 'De segunda a sexta, das 8h às 17h', '(83) 3133-3413', 'https://agendamentos.pb.gov.br/SAA/hemoiba/home;jsessionid=J9gfcxqFp2Wgy53703vMkY1R', 6);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
     ('HEMOMAR - Centro de Hematologia e Hemoterapia do Maranhão', 'Nordeste', '(98) 3216-1139', 'De segunda a sexta, das 8h às 17h', '(98) 3216-1100', NULL, 7);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
-    ('HEMONORTE - Centro de Hematologia e Hemoterapia do Rio Grande do Norte', 'Nordeste', '(84) 3232-6701', 'De segunda a sexta, das 8h às 17h', NULL, NULL, 8);
+    ('HEMONORTE - Centro de Hematologia e Hemoterapia do Rio Grande do Norte', 'Nordeste', '(84) 3232-6701', 'De segunda a sexta, das 8h às 17h', NULL, 'http://central.rn.gov.br/index.php?class=GrupoServicoPage&method=onReload', 8);
 INSERT INTO hemocentro (nome, regiao, telefone, horario_funcionamento, outros_canais, site, endereco_id) VALUES
     ('HEMOPE - Fundação de Hematologia e Hemoterapia de Pernambuco', 'Nordeste', '(81) 3182-4912', 'De segunda a sexta, das 8h às 17h', NULL, NULL, 9);
 
